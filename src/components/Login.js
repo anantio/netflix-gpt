@@ -13,18 +13,16 @@ const Login = () => {
 
   const email = useRef(null);
   const password = useRef(null);
+  const name = useRef(" ");
 
   const handleButtonClick = () => {
-    const isCredsValidMessage = validateUserEmailPassword(
+    const validationMessage = validateUserEmailPassword(
       email.current.value,
-      password.current.value
+      password.current.value,
+      ...(isSignInForm ? "" : name.current.value)
     );
-    if (isCredsValidMessage === null) {
-      return true;
-    } else {
-      setErrorMessage(isCredsValidMessage);
-      return false;
-    }
+    setErrorMessage(validationMessage);
+    console.log(name.current.value);
   };
 
   return (
@@ -45,6 +43,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
+            ref={name}
             type="text"
             placeholder="Full Name"
             className="p-3 my-4 w-full bg-gray-700 rounded-sm"
@@ -62,7 +61,7 @@ const Login = () => {
           placeholder="Password"
           className="p-3  my-4 w-full  bg-gray-700 rounded-sm"
         />
-        <p className="text-red-700">{errorMessage}</p>
+        <p className="text-red-700 font-bold text-lg">{errorMessage}</p>
         <button
           className="bg-red-700 rounded-md  p-2 my-10 w-full"
           onClick={handleButtonClick}
