@@ -3,10 +3,29 @@ import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Header = (props) => {
   const [isHovering, setHovering] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 10) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -20,7 +39,11 @@ const Header = (props) => {
   };
 
   return (
-    <div className="absolute w-full px-20 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div
+      className={`fixed w-full px-20  z-[1] flex justify-between ${
+        scrolled ? "bg-stone-800" : "bg-gradient-to-b from-black"
+      }`}
+    >
       <img
         className="w-40"
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
