@@ -4,11 +4,13 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Header = (props) => {
   const [isHovering, setHovering] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const user = useSelector((store) => store.user);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -55,11 +57,7 @@ const Header = (props) => {
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
         >
-          <img
-            className="w-10 h-10"
-            src="https://occ-0-2164-2186.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABVbYEW3Bkl6g7KkyJmusw_jPAXtpY6KusGOVNs-4v4vTLf6h4kETNq3ApIhFAHL2Dbe1z1T-j8gaEIw5TElx87IQfk791_g.png?r=5eb"
-            alt="logo"
-          />
+          <img className="w-10 h-10" src={user?.photoURL} alt="logo" />
           {isHovering && (
             <div className="absolute min-w-[100px] shadow-sm z-[1] text-white font-bold bg-gray-400 top-[80%]">
               <button className="p-2 m-1" onClick={handleSignOut}>
