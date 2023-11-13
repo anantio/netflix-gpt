@@ -31,6 +31,7 @@ const Login = () => {
       email.current.value,
       password.current.value
     );
+
     setErrorMessage(validationMessage);
     if (validationMessage) return;
 
