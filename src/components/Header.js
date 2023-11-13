@@ -5,12 +5,16 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
 
 const Header = (props) => {
   const [isHovering, setHovering] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const dispatch = useDispatch();
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -22,6 +26,26 @@ const Header = (props) => {
   };
 
   useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        navigate("browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -30,10 +54,7 @@ const Header = (props) => {
 
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-        navigate("/");
-      })
+      .then(() => {})
       .catch((error) => {
         // An error happened.
         navigate("/error");
