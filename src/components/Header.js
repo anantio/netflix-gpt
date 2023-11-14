@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import { LOGO } from "../utils/constants";
 
 const Header = (props) => {
   const [isHovering, setHovering] = useState(false);
@@ -37,7 +38,7 @@ const Header = (props) => {
             photoURL: photoURL,
           })
         );
-        navigate("browse");
+        navigate("/browse");
       } else {
         dispatch(removeUser());
         navigate("/");
@@ -69,11 +70,7 @@ const Header = (props) => {
         scrolled ? "bg-stone-800" : "bg-gradient-to-b from-black"
       }`}
     >
-      <img
-        className="w-40"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-        alt="logo"
-      />
+      <img className="w-40" src={LOGO} alt="logo" />
       {props.showProfileIcon && (
         <div
           className="flex cursor-pointer bottom-5 border-black px-3 py-5"
