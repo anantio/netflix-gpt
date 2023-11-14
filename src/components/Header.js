@@ -67,7 +67,7 @@ const Header = (props) => {
   return (
     <div
       className={`fixed w-full px-20  z-[1] flex justify-between ${
-        scrolled ? "bg-stone-800" : "bg-gradient-to-b from-black"
+        scrolled ? "bg-black" : "bg-gradient-to-b from-black"
       }`}
     >
       <img className="w-40" src={LOGO} alt="logo" />

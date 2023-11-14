@@ -13,7 +13,7 @@ const VideoBackground = ({ movieId }) => {
           trailerVideo?.key +
           "?&autoplay=1&mute=1"
         }
-        title="YouTube India Player"
+        title="YouTube"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
     </div>

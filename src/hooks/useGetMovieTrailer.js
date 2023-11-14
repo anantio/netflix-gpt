@@ -15,7 +15,7 @@ const useGetMovieTrailer = (movieId) => {
     );
     const json = await data.json();
     const trailerVideo = json.results.filter(
-      (x) => x.name === "Official Teaser"
+      (x) => x.name === "Official Trailer"
     );
     const trailer =
       trailerVideo.trailer === 0 ? json.results[0] : trailerVideo[0];

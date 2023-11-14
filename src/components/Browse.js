@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "./Header";
 import { useNowPlayingMovies } from "../hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
@@ -8,7 +8,7 @@ const Browse = () => {
   useNowPlayingMovies();
 
   return (
-    <div>
+    <div className="bg-black">
       <Header showProfileIcon={true} />
       <MainContainer />
       <SecondaryContainer />
