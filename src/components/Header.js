@@ -66,18 +66,18 @@ const Header = (props) => {
 
   return (
     <div
-      className={`fixed w-full px-20  z-[1] flex justify-between ${
+      className={`fixed w-full px-20 z-[30] flex justify-between ${
         scrolled ? "bg-black" : "bg-gradient-to-b from-black"
       }`}
     >
-      <img className="w-40" src={LOGO} alt="logo" />
+      <img className="w-[135px]" src={LOGO} alt="logo" />
       {props.showProfileIcon && (
         <div
-          className="flex cursor-pointer bottom-5 border-black px-3 py-5"
+          className="flex cursor-pointer bottom-5 border-black px-3 py-3"
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
         >
-          <img className="w-10 h-10" src={user?.photoURL} alt="logo" />
+          <img className="w-8 h-8 absolute" src={user?.photoURL} alt="logo" />
           {isHovering && (
             <div className="absolute min-w-[100px] shadow-sm z-[1] text-white font-bold bg-gray-400 top-[80%]">
               <button className="p-2 m-1" onClick={handleSignOut}>
