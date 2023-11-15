@@ -143,7 +143,7 @@ const Login = () => {
               New to Netflix? <strong>Sign Up Now</strong>
             </>
           ) : (
-            "Already Resgistered? Sign In now"
+            "Already Registered? Sign In now"
           )}
         </p>
       </form>
