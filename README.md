@@ -10,8 +10,8 @@
     - Custom Hooks
 
 # Steps to login:
---Sign up to the application with your Email Id and password.
---Sign in by clicking on "Already Registered? Sign In now".
+    -Sign up to the application with your Email Id and password.
+    -Sign in by clicking on "Already Registered? Sign In now".
 
 # Features:
 
