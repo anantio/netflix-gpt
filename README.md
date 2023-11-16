@@ -15,29 +15,30 @@
 
 # Features:
 
--- Login Page
+- Login Page
     - Validation of Mail & Password
     - Authentication of user with Firebase
     - Sign up and user resgistration by email
 
--- Header
+- Header
     - Logo
     - User Profile (when login is successsful)
     - Sign Out on hover on the profile picture
 
--- Browse Movie Page
+- Browse Movie Page
     - Video Backgraound for trailers playing with title/description appearing on the screen
     - Movie Carousel with different movie lists
     - Buttons to scroll rigth and left [on hover]
     -
 
--- Footer   
+- Footer   
     - Developer's contact information
     - Contains redireting links to GitHub, Twitter, Linkedin, Medium profiles.
 
--- GPT Search 
+- GPT Search 
     - Show search after user logged in
     - Search Bar
     - Multi language feature on this page
+
 
 
