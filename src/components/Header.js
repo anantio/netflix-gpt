@@ -8,13 +8,16 @@ import { useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constants";
+import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
+import { toggleGPTSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = (props) => {
   const [isHovering, setHovering] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const showGPTSearch = useSelector((store) => store.gpt.showGPTSearchView);
   const dispatch = useDispatch();
 
   const handleScroll = () => {
@@ -24,6 +27,15 @@ const Header = (props) => {
     } else {
       setScrolled(false);
     }
+  };
+
+  const handleGPTSearchClick = () => {
+    //Toggle GPT Search
+    dispatch(toggleGPTSearchView(true));
+  };
+
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
   };
 
   useEffect(() => {
@@ -44,7 +56,7 @@ const Header = (props) => {
         navigate("/");
       }
     });
-    //UNsubscribe when component unmounts
+    //Unsubscribe when component unmounts
     return () => unsubscribe();
   }, []);
 
@@ -67,10 +79,33 @@ const Header = (props) => {
   return (
     <div
       className={`fixed w-full px-20 z-[30] flex justify-between ${
-        scrolled ? "bg-black" : "bg-gradient-to-b from-black"
+        scrolled ? "bg-gradient-to-b from-black" : "bg-gradient-to-b from-black"
       }`}
     >
       <img className="w-[135px]" src={LOGO} alt="logo" />
+      {user && (
+        <>
+          <button
+            className=" border border-gray-600 bg-gray-500 rounded-md py-2 px-9 my-2 text-white"
+            onClick={handleGPTSearchClick}
+          >
+            {!showGPTSearch ? "GPT Search" : "Home Page"}
+          </button>
+          {showGPTSearch && (
+            <select
+              className="p-2 m-2 bg-gray-900 text-white"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+        </>
+      )}
+
       {props.showProfileIcon && (
         <div
           className="flex cursor-pointer bottom-5 border-black px-3 py-3"
