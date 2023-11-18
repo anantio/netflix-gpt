@@ -25,4 +25,4 @@ export const OPEN_AI_KEY =
   "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";
 
 export const OPENAI_API_KEY =
-  "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";
+  "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";

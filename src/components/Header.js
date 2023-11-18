@@ -22,7 +22,7 @@ const Header = (props) => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 10) {
+    if (offset > 300) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -78,7 +78,7 @@ const Header = (props) => {
   return (
     <div
       className={`fixed w-full px-20 z-[30] flex justify-between ${
-        scrolled ? "bg-gradient-to-b from-black" : "bg-gradient-to-b from-black"
+        scrolled ? "bg-black" : "bg-gradient-to-b from-black"
       }`}
     >
       <img className="w-[135px]" src={LOGO} alt="logo" />

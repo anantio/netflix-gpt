@@ -28,7 +28,7 @@ const MovieList = ({ title, movies }) => {
       >
         <div className="flex">
           {movies?.map((movie) => (
-            <MovieCard key={movie.id} posterPath={movie.poster_path} />
+            <MovieCard key={movie?.id} posterPath={movie?.poster_path} />
           ))}
         </div>
         {Hovering && (
