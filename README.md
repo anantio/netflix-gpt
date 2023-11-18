@@ -2,18 +2,18 @@
 
 ## Web-app hosting url: https://cinewave-demo.web.app/
 
-# Tech Stack / Libraries / Concepts
-    - React.js ; Redux; Tailwind CSS; JSX; 
-    - TMDb API for movie data
-    - Authentication with Firebase
-    - Deployment with Firebase
-    - Custom Hooks
+### Tech Stack / Libraries / Concepts
+- React.js ; Redux; Tailwind CSS; JSX; 
+- TMDb API for movie data
+- Authentication with Firebase
+- Deployment with Firebase
+- Custom Hooks
 
-# Steps to login:
-    -Sign up to the application with your Email Id and password.
-    -Sign in by clicking on "Already Registered? Sign In now".
+#### Steps to login:
+- Sign up to the application with your Email Id and password.
+- Sign in by clicking on "Already Registered? Sign In now".
 
-# Features:
+### Features:
 
 - Login Page
     - Validation of Mail & Password
