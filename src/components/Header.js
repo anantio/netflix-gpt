@@ -30,7 +30,6 @@ const Header = (props) => {
   };
 
   const handleGPTSearchClick = () => {
-    //Toggle GPT Search
     dispatch(toggleGPTSearchView(true));
   };
 
@@ -86,7 +85,7 @@ const Header = (props) => {
       {user && (
         <>
           <button
-            className=" border border-gray-600 bg-gray-500 rounded-md py-2 px-9 my-2 text-white"
+            className=" border border-gray-600 rounded-md py-2 px-9 my-2 text-white ml-[80%]"
             onClick={handleGPTSearchClick}
           >
             {!showGPTSearch ? "GPT Search" : "Home Page"}

@@ -20,3 +20,9 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "spanish", name: "Spanish" },
   { identifier: "german", name: "German" },
 ];
+
+export const OPEN_AI_KEY =
+  "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";
+
+export const OPENAI_API_KEY =
+  "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";

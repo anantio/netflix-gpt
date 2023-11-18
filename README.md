@@ -1,6 +1,6 @@
 # Netflix clone with ChatGPT powers
 
-# Web-app hosting url: https://cinewave-demo.web.app/
+## Web-app hosting url: https://cinewave-demo.web.app/
 
 # Tech Stack / Libraries / Concepts
     - React.js ; Redux; Tailwind CSS; JSX; 
@@ -29,7 +29,7 @@
     - Video Backgraound for trailers playing with title/description appearing on the screen
     - Movie Carousel with different movie lists
     - Buttons to scroll rigth and left [on hover]
-    -
+    
 
 - Footer   
     - Developer's contact information
@@ -39,6 +39,8 @@
     - Show search after user logged in
     - Search Bar
     - Multi language feature on this page
+    - Integrate GPT API's and get open AI key
+    -
 
 
 

@@ -2,14 +2,10 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="flex px-[42%]">
+    <div className="flex px-[40%] bg-black">
       <span className="flex py-[20%] text-gray-500 text-xl">
         Follow Me:
-        <a
-          className="px-2"
-          href="https://github.com/anantio"
-          target="blank"
-        >
+        <a className="px-2" href="https://github.com/anantio" target="blank">
           <img
             align="center"
             src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg"

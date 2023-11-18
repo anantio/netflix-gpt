@@ -3,9 +3,7 @@ import GPTSearchBar from "./GPTSearchBar";
 import GPTMovieSuggestions from "./GPTMovieSuggestions";
 import { BG_URL } from "../utils/constants";
 
-
 const GPTSearch = () => {
-    
   return (
     <div className="text-white">
       <div className="absolute -z-10">
