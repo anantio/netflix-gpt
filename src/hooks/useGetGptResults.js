@@ -8,9 +8,9 @@ const useGetGptResults = (searchText) => {
 
   const getGptMovies = async () => {
     const gptStdQuery =
-      "Act as a Movie Recommendation list system and suggest some movies relevant for query/word: " +
+      "Act as a Movie Recommendation list system and suggest 20 movies similar to: " +
       searchText +
-      ". only give me 20 movie names, and comma seperated like the example result given ahead. Example Result: Gadar, Shaolay, Don, Andaz Apna Apna, Golmaal and so on";
+      ",and comma seperated like the example result given ahead, answer only in the following format: Gadar, Shaolay, Don, Andaz Apna Apna, Golmaal and so on. And dont consider the previous query while giving the suggestions";
     const gptResult = await openai.chat.completions.create({
       messages: [{ role: "user", content: gptStdQuery }],
       model: "gpt-3.5-turbo",
