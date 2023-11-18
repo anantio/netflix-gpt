@@ -6,7 +6,7 @@ import useGetGptResults from "../hooks/useGetGptResults";
 const GPTSearchBar = () => {
   const languageSelector = useSelector((store) => store.config.language);
   const searchText = useRef(null);
-  const handleGPTSearchClick = useGetGptResults(searchText.current?.value);
+  const handleGPTSearchClick = useGetGptResults(searchText);
 
   return (
     <div className="">

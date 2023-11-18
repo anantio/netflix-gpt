@@ -85,18 +85,18 @@ const Header = (props) => {
       {user && (
         <>
           <button
-            className=" border border-gray-600 rounded-md py-2 px-9 my-2 text-white ml-[80%]"
+            className=" border border-gray-600 rounded-md p-2 my-2 text-white ml-[80%]"
             onClick={handleGPTSearchClick}
           >
-            {!showGPTSearch ? "GPT Search" : "Home Page"}
+            {!showGPTSearch ? "GPT Search" : "Home"}
           </button>
           {showGPTSearch && (
             <select
-              className="p-2 m-2 bg-gray-900 text-white"
+              className="border border-gray-600 rounded-md bg-transparent p-2 my-2 text-white"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <option key={lang.identifier} value={lang.identifier}>
+                <option className="bg-black" key={lang.identifier} value={lang.identifier}>
                   {lang.name}
                 </option>
               ))}
