@@ -29,7 +29,7 @@
     - Video Backgraound for trailers playing with title/description appearing on the screen
     - Movie Carousel with different movie lists
     - Buttons to scroll rigth and left [on hover]
-    
+    - Movie Title can be shrunk and expanded on click.
 
 - Footer   
     - Developer's contact information
@@ -40,7 +40,7 @@
     - Search Bar
     - Multi language feature on this page
     - Integrate GPT API's and get open AI key
-    -
+    
 
 
 
