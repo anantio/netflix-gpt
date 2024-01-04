@@ -19,7 +19,7 @@ const MovieList = ({ title, movies }) => {
 
   return (
     <div className="px-6">
-      <h1 className="text-2xl font-bold text-white p-2">{title}</h1>
+      <h1 className="md:text-2xl test-lg font-bold text-white p-2">{title}</h1>
       <div
         className="flex overflow-x-auto no-scrollbar"
         ref={scrollContainerRef}
