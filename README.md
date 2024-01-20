@@ -7,7 +7,7 @@
 - TMDb API for movie data
 - Authentication with Firebase
 - Deployment with Firebase
-- Custom Hooks
+- Custom Hooks 
 
 #### Steps to login:
 - Sign up to the application with your Email Id and password.
@@ -40,7 +40,4 @@
     - Search Bar
     - Multi language feature on this page
     - Integrate GPT API's and get open AI key
-    
-
-
 
