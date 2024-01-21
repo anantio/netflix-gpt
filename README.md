@@ -41,3 +41,8 @@
     - Multi language feature on this page
     - Integrate GPT API's and get open AI key
 
+- To Do
+    - Check Firebase Auth
+    - Integrate Payment Gateway
+    - Add a carousel
+    - Optimize frontend security wise.
