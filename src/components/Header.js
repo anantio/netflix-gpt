@@ -96,7 +96,11 @@ const Header = (props) => {
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <option className="bg-black" key={lang.identifier} value={lang.identifier}>
+                <option
+                  className="bg-black"
+                  key={lang.identifier}
+                  value={lang.identifier}
+                >
                   {lang.name}
                 </option>
               ))}
